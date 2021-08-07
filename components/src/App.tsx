@@ -1,11 +1,9 @@
 import React, { Fragment } from 'react';
-import Button from './components/Button';
+import SearchBar from './components/SearchBar';
 
 const App = (): JSX.Element => (
   <Fragment>
-    <h1>Hello, Inquisitor</h1>
-    <img src='./img/inquisition.jpg' alt='image' width='800' />
-    <Button />
+    <SearchBar />
   </Fragment>
 );
 

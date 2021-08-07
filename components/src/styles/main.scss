@@ -1,4 +1,4 @@
-$background-color: #555;
+$background-color: #78c2ad;
 $body-font: "Roboto";
 
 * {
@@ -7,7 +7,12 @@ $body-font: "Roboto";
   padding: 0;
 }
 
+html {
+  font-size: 10px;
+}
+
 body {
   background-color: $background-color;
   font-family: $body-font;
+  font-size: 1.4rem;
 }
