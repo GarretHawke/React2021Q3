@@ -5,7 +5,7 @@ function SearchBar(): JSX.Element {
 
   return (
     <div className="wrapper">
-      <h1>find everywhere</h1>
+      <h1>explore the world of dragon age</h1>
       <div className="search-container">
         <form>
           <input type="text" placeholder="&#128269;" />

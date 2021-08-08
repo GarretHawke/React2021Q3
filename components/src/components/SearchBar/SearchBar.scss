@@ -8,7 +8,7 @@ h1 {
   text-transform: uppercase;
   font-size: 2.2rem;
   margin-top: 40px;
-  color: #fff;
+  color: rgb(68, 74, 73);
   text-shadow: 0px 5px 8px rgba(15, 33, 47, 0.19);
   -moz-text-shadow: 0px 5px 8px rgba(15, 33, 47, 0.19);
   -webkit-text-shadow: 0px 5px 8px rgba(15, 33, 47, 0.19);
@@ -39,10 +39,6 @@ input[type="text"] {
   -webkit-box-shadow: 0px 10px 16px -2px rgba(15, 33, 47, 0.19);
   -moz-box-shadow: 0px 10px 16px -2px rgba(15, 33, 47, 0.19);
   box-shadow: 0px 10px 16px -2px rgba(15, 33, 47, 0.19);
-
-  &:focus {
-    box-shadow: 0 0 5px 5px rgba(120, 194, 173, 25%);
-  }
 }
 
 input[type="submit"] {
