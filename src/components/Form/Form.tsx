@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Form.scss';
 
-const Form = () => {
+const Form = ({ setFormValues }: {setFormValues: React.Dispatch<React.SetStateAction<{}[]>>}) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [birthDate, setBirthDate] = useState('');
@@ -11,6 +11,7 @@ const Form = () => {
   const [agree, setAgree] = useState(false);
 
   const submitHandler = (event: React.FormEvent) => {
+    setFormValues(state => [...state, { firstName, lastName, birthDate, _gender, _race, _class, agree }])
     event.preventDefault();
   }
 
@@ -53,8 +54,8 @@ const Form = () => {
         </select>
       </label>
       <label className="label" htmlFor="checkBox">
-        I agree to faithfully serve the Inquisition
-        <input type="checkbox" name="checkBox" checked={ agree } onChange={ () => {setAgree(!agree); console.log(!agree)} } />
+        I agree to serve the Inquisition faithfully
+        <input type="checkbox" name="checkBox" checked={ agree } onChange={ () => {setAgree(!agree) }} />
       </label>
       <div className="submit-button">
         <input type="submit" value="Submit"></input>
