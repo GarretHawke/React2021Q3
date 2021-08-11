@@ -1,7 +1,8 @@
 import React from "react";
 import './Card.scss';
+import IFormValues from "@/components/shared";
 
-const Card = ({ item }: { item: { firstName: string, lastName: string, birthDate: string, _gender: string, _race: string, _class: string, agree: boolean } }): JSX.Element => {
+const Card = ({ item }: { item: IFormValues }): JSX.Element => {
   return (
     <div>
       <div>{item.firstName}</div>

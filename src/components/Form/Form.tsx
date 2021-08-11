@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './Form.scss';
+import IFormValues from '@/components/shared';
 
-const Form = ({ setFormValues }: {setFormValues: React.Dispatch<React.SetStateAction<{}[]>>}) => {
+const Form = ({ setFormValues }: {setFormValues: React.Dispatch<React.SetStateAction<IFormValues[] | []>>}) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [birthDate, setBirthDate] = useState('');
