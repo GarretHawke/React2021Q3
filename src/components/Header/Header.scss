@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  margin-top: 20px;
+  color: rgb(68, 74, 73);
+  text-shadow: 0px 5px 8px rgba(15, 33, 47, 0.19);
+  -moz-text-shadow: 0px 5px 8px rgba(15, 33, 47, 0.19);
+  -webkit-text-shadow: 0px 5px 8px rgba(15, 33, 47, 0.19);
+}

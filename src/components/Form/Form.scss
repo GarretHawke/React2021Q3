@@ -1,15 +1,62 @@
+$font-color: rgb(107, 104, 91);
+$error-color: rgb(150, 47, 47);
+
 .form {
   display: flex;
   flex-direction: column;
   width: 300px;
-  height: 400px;
-  padding: 20px;
-  background-color: #666;
-  margin: 60px auto;
+  height: 370px;
+  padding: 10px 20px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: rgb(216, 216, 216);
+  -webkit-box-shadow: 0px 0px 15px 2px rgba(34, 60, 80, 0.2) inset;
+  -moz-box-shadow: 0px 0px 15px 2px rgba(34, 60, 80, 0.2) inset;
+  box-shadow: 0px 0px 15px 2px rgba(34, 60, 80, 0.2) inset;
 }
 
 .label {
   display: flex;
   flex-direction: column;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  margin-top: 5px;
+}
+
+.error-message {
+  margin-left: 5px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: $error-color;
+}
+
+option {
+  text-transform: capitalize;
+}
+
+.agree-message {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+input[type="checkbox"] {
+  margin: 5px 0;
+}
+
+input[type="submit"] {
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 10px 16px -2px rgba(15, 33, 47, 0.19);
+  -moz-box-shadow: 0px 10px 16px -2px rgba(15, 33, 47, 0.19);
+  box-shadow: 0px 10px 16px -2px rgba(15, 33, 47, 0.19);
+  color: #fff;
+  background-color: #f3969a;
+  transition: 300ms;
+
+  &:hover {
+    background-color: #c78486;
+  }
 }
