@@ -11,7 +11,7 @@ const Card = ({ item }: { item: IFormValues }): JSX.Element => {
         <h3 className="card-name">{item.firstName} {item.lastName}</h3>
         <div className="card-prop">
           <span className="card-prop__header">Gender:</span>
-          <span className="card-prop__value">{item._gender}</span>
+          <span className="card-prop__value">{item.isMale ? 'male' : 'female'}</span>
         </div>
         <div className="card-prop">
           <span className="card-prop__header">Race:</span>

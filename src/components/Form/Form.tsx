@@ -6,20 +6,20 @@ const Form = ({ setFormValues }: {setFormValues: React.Dispatch<React.SetStateAc
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [birthDate, setBirthDate] = useState('');
-  const [_gender, _setGender] = useState('');
   const [_race, _setRace] = useState('');
   const [_class, _setClass] = useState('');
   const [agree, setAgree] = useState(false);
   const [errors, setErrors] = useState({});
+  const [isMale, setMale] = useState(true);
 
   useEffect(() => {
     validate();
-  }, [firstName, lastName, birthDate, _gender, _race, _class, agree]);
+  }, [firstName, lastName, birthDate, isMale, _race, _class, agree]);
 
   const submitHandler = (event: React.FormEvent) => {
     event.preventDefault();
     if (Object.keys(errors).length === 0) {
-      setFormValues(state => [...state, { firstName, lastName, birthDate, _gender, _race, _class, agree }]);
+      setFormValues(state => [...state, { firstName, lastName, birthDate, isMale, _race, _class, agree }]);
       resetValues();
     }
   }
@@ -34,9 +34,6 @@ const Form = ({ setFormValues }: {setFormValues: React.Dispatch<React.SetStateAc
     }
     if (birthDate === '') {
       setErrors(state => ({...state, birthDate}));
-    }
-    if (_gender === '') {
-      setErrors(state => ({...state, _gender}));
     }
     if (_race === '') {
       setErrors(state => ({...state, _race}));
@@ -53,7 +50,7 @@ const Form = ({ setFormValues }: {setFormValues: React.Dispatch<React.SetStateAc
     setFirstName('');
     setLastName('');
     setBirthDate('');
-    _setGender('');
+    setMale(true);
     _setRace('');
     _setClass('');
     setAgree(false);
@@ -85,13 +82,15 @@ const Form = ({ setFormValues }: {setFormValues: React.Dispatch<React.SetStateAc
       <label className="label" htmlFor="gender">
         <p>
           Gender
-          { errors?._gender !== undefined && <span className="error-message">* required</span> }
         </p>
-        <select className="select" name="gender" value={ _gender } onChange={ event => _setGender(event?.target.value) }>
-          <option disabled value="">--select your gender--</option>
-          <option>Male</option>
-          <option>Female</option>
-        </select>
+        <div className={ isMale ? 'switch-container' : 'switch-container female' } >
+          <label className={ isMale ?  'switch-text switch-active' : 'switch-text' } id="switch-train">male</label>
+          <label className='switch'>
+            <input type="checkbox" className='switch-input' onChange={() => setMale(!isMale)} />
+            <span className={ isMale ? 'switch-slider' : 'switch-slider female' }></span>
+          </label>
+          <label className={ isMale ?  'switch-text' : 'switch-text switch-active' } id="switch-play">female</label>
+        </div>
       </label>
       <label className="label" htmlFor="race">
         <p>
@@ -109,7 +108,7 @@ const Form = ({ setFormValues }: {setFormValues: React.Dispatch<React.SetStateAc
       <label className="label" htmlFor="class">
         <p>
           Class
-          { errors?._gender !== undefined && <span className="error-message">* required</span> }
+          { errors?._class !== undefined && <span className="error-message">* required</span> }
         </p>
         <select className="select" name="class" value={ _class } onChange={ event => _setClass(event?.target.value) }>
         <option disabled value="">--select your class--</option>
