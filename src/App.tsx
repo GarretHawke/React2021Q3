@@ -6,6 +6,7 @@ import { Article, SortType } from '@/shared';
 const App = (): JSX.Element => {
   const [searchValue, setSearchValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [totalResults, setTotalResults] = useState(1);
   const [articles, setArticles] = useState<Article[] | []>([]);
   const [sortBy, setSortBy] = useState<SortType>(SortType.relevancy);
   const [page, setPage] = useState(1);
@@ -38,6 +39,7 @@ const App = (): JSX.Element => {
         sortBy={sortBy}
         page={page}
         resultsPerPage={resultsPerPage}
+        setTotalResults={setTotalResults}
       />
       {articles.length !== 0 && (
         <ResultsList
@@ -47,6 +49,7 @@ const App = (): JSX.Element => {
           sortHandler={sortHandler}
           resultsPerPage={resultsPerPage}
           setResultsPerPage={setResultsPerPage}
+          totalResults={totalResults}
         />
       )}
     </Fragment>

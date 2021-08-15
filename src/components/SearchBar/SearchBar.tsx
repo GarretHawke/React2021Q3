@@ -13,6 +13,7 @@ const SearchBar = ({
   sortBy,
   page,
   resultsPerPage,
+  setTotalResults
 }: {
   searchValue: string;
   setSearchValue: React.Dispatch<React.SetStateAction<string>>;
@@ -22,6 +23,7 @@ const SearchBar = ({
   sortBy: SortType;
   page: number;
   resultsPerPage: number;
+  setTotalResults: React.Dispatch<React.SetStateAction<number>>
 }): JSX.Element => {
   const [requestError, setRequestError] = useState<number | undefined>(
     undefined
@@ -40,6 +42,7 @@ const SearchBar = ({
       const response: AxiosResponse<GET200_Articles> = await axiosInstance.get(
         `v2/everything?q=${searchValue}&sortBy=${sortBy}&pageSize=${resultsPerPage}&page=${page}&apiKey=${apiKey}`
       );
+      setTotalResults(response.data.totalResults);
       setArticles(response.data.articles);
     } catch (event) {
       if (event instanceof TypeError) {

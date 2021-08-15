@@ -13,5 +13,12 @@ export default interface Article {
 }
 
 export default interface GET200_Articles {
-  articles: Article[]
+  articles: Article[];
+  status: string;
+  totalResults: number;
+}
+
+export default interface Response {
+  status: string;
+  totalResults: number;
 }

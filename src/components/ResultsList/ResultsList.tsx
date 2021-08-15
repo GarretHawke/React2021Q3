@@ -11,6 +11,7 @@ const ResultsList = ({
   sortHandler,
   resultsPerPage,
   setResultsPerPage,
+  totalResults
 }: {
   articles: Article[] | [];
   pageNumber: number;
@@ -18,13 +19,16 @@ const ResultsList = ({
   sortHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
   resultsPerPage: number;
   setResultsPerPage: React.Dispatch<React.SetStateAction<number>>;
+  totalResults: number;
 }): JSX.Element => {
   const [articlesPage, setArticlesPage] = useState(1);
   const [numberOfResults, setNumberOfResults] = useState(10);
+  const [newTotalResults, setNewTotalResults] = useState(Math.ceil(totalResults / resultsPerPage));
 
   useEffect(() => {
     setArticlesPage(pageNumber);
     setNumberOfResults(resultsPerPage);
+    setNewTotalResults(Math.ceil(totalResults / resultsPerPage));
   }, [pageNumber, resultsPerPage]);
 
   const setPage = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -80,18 +84,27 @@ const ResultsList = ({
       </div>
       <div className="sort-header">
         <span>Page</span>
+        <button className="arrow-button">{"<"}</button>
         <input
           className="page-number"
           type="text"
           onChange={setPage}
           value={articlesPage}
         />
-        <span>Results per page</span>
+        ...
         <input
           className="page-number"
           type="text"
+          onChange={() => {}}
+          value={newTotalResults !== Infinity ? newTotalResults : totalResults}
+        />
+        <button className="arrow-button">{">"}</button>
+        <span>Results per page</span>
+        <input
+          className="page-number total"
+          type="text"
           onChange={setResults}
-          value={numberOfResults}
+          value={numberOfResults <= 100 ? numberOfResults : 100}
         />
       </div>
       <div className="cards-container">

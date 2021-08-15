@@ -1,3 +1,6 @@
+$button-arrow-color: rgb(150, 47, 47);
+$button-arrow-color-add: rgb(224, 111, 111);
+
 .results-container {
   display: flex;
   flex-direction: column;
@@ -16,6 +19,8 @@
 .sort-header {
   font-size: 1.4rem;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
 }
 
 .radio-container {
@@ -35,11 +40,51 @@
   cursor: pointer;
 }
 
-.page-number {
-  font-size: 1.4rem;
+.arrow-button {
   width: 30px;
+  height: 30px;
   margin: 0 5px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 10px 16px -2px rgba(15, 33, 47, 0.19);
+  -moz-box-shadow: 0px 10px 16px -2px rgba(15, 33, 47, 0.19);
+  box-shadow: 0px 10px 16px -2px rgba(15, 33, 47, 0.19);
+  color: #fff;
+  background-color: #f3969a;
+  transition: 300ms;
+  font-size: 1.4rem;
+
+  &:hover {
+    background-color: #c78486;
+  }
+}
+
+.page-number {
+  width: 60px;
+  height: 30px;
+  font-size: 1.4rem;
+  border: none;
+  outline: none;
+  padding: 10px;
+  margin: 0 5px;
+  border-radius: 5px;
   text-align: center;
+  background-color: rgb(216, 216, 216);
+  -webkit-box-shadow: 0px 0px 15px 2px rgba(34, 60, 80, 0.2) inset;
+  -moz-box-shadow: 0px 0px 15px 2px rgba(34, 60, 80, 0.2) inset;
+  box-shadow: 0px 0px 15px 2px rgba(34, 60, 80, 0.2) inset;
+
+  &:focus {
+    -webkit-box-shadow: 0px 0px 15px 2px rgba(150, 47, 47, 0.4) inset;
+    -moz-box-shadow: 0px 0px 15px 2px rgba(150, 47, 47, 0.4) inset;
+    box-shadow: 0px 0px 15px 2px rgba(150, 47, 47, 0.4) inset;
+  }
+
+  &.total {
+    margin-left: 5px;
+  }
 }
 
 .cards-container {
