@@ -1,0 +1,89 @@
+$header-color: rgb(64, 63, 59);
+$header-active-color: rgb(150, 47, 47);
+$font-color: rgb(107, 104, 91);
+
+.card-container {
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  height: 340px;
+  margin: 10px;
+  background-color: #fff;
+  transition: all 500ms;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+
+  &:hover {
+    transform: scale(1.01);
+    -webkit-box-shadow: 0px 10px 10px 2px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 10px 10px 2px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 10px 10px 2px rgba(34, 60, 80, 0.2);
+
+    & .title {
+      color: $header-active-color;
+    }
+  }
+}
+
+.image-container {
+  width: 100%;
+  height: 30%;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-image {
+  width: 100%;
+}
+
+.card-content {
+  height: 70%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: $header-color;
+  font-size: 1.4rem;
+  border-bottom: 1px solid $header-color;
+  padding-bottom: 5px;
+}
+
+.title-link {
+  text-decoration: none;
+}
+
+.description {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 10px;
+  padding: 0 5px;
+  text-align: justify;
+}
+
+.full-paper {
+  color: $header-active-color;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  padding: 5px;
+}
+
+.author {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.date {
+  font-size: 1rem;
+  font-weight: 400;
+}
