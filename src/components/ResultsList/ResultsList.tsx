@@ -84,7 +84,6 @@ const ResultsList = ({
       </div>
       <div className="sort-header">
         <span>Page</span>
-        <button className="arrow-button">{"<"}</button>
         <input
           className="page-number"
           type="text"
@@ -98,7 +97,6 @@ const ResultsList = ({
           onChange={() => {}}
           value={newTotalResults !== Infinity ? newTotalResults : totalResults}
         />
-        <button className="arrow-button">{">"}</button>
         <span>Results per page</span>
         <input
           className="page-number total"
