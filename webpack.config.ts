@@ -51,7 +51,7 @@ const webpackConfig = {
   plugins: [
     // html-template
     new HtmlWebpackPlugin({
-      title: 'api',
+      title: 'router',
       template: path.resolve(__dirname, './src/template.html'),
       filename: 'index.html',
       favicon: './src/static/icons/favicon.ico',
