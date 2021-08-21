@@ -64,7 +64,7 @@ const SearchBar = ({
 
   return (
     <div className="wrapper">
-      <h1>explore the world news</h1>
+      <h1 className="searchbar-header">explore the world news</h1>
       <div className="search-container">
         <form onSubmit={submitHandler}>
           <input
