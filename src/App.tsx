@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from '@/components/Header';
 import HomePage from '@/pages/Home';
 import AboutPage from '@/pages/About';
+import Page404 from '@/pages/404';
 
 const App = (): JSX.Element => {
   
@@ -13,8 +14,11 @@ const App = (): JSX.Element => {
         <Route exact path='/'>
           <HomePage />
         </Route>
-        <Route path='/about'>
+        <Route exact path='/about'>
           <AboutPage />
+        </Route>
+        <Route path='*'>
+          <Page404 />
         </Route>
       </Switch>
     </Router>
